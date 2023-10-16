@@ -11,7 +11,7 @@
 			<div class="img-box">
 				<img src="images/transparent.png" width="100%">
 				<div class="img-wrap">
-					<img src="images/original.jpg" width="100%">
+					<img src="images/original.jpg" id="originalImg">
 				</div>
 			</div>
 		</div>
@@ -19,11 +19,14 @@
 		<script>
 			var imgBox = document.querySelector('.img-box'); 
 			var imgWrap = document.querySelector('.img-wrap');
+			var originalImg = document.getElementById('originalImg');
+
+			originalImg.style.width = imgBox.offsetWidth + 'px';
 
 			var leftSpace = imgBox.offsetLeft;
 
 			imgBox.onmousemove = function(e) {
-				var boxWidth = (e.pageX - leftSpace) + "px";
+				var boxWidth = (e.pageX - leftSpace) + 'px';
 				imgWrap.style.width = boxWidth;
 			}
 
